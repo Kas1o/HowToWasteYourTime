@@ -1,11 +1,12 @@
 ﻿using HowToWasteYourTime.Lib;
 using HowToWasteYourTime.Sort;
-
+using HowToWasteYourTime.Math;
 
 Console.WriteLine("Welcome to Time Waste Project!");
-Console.WriteLine("0.SleepSort");
+Console.WriteLine("0.SleepSort 1.Square 2.SelfPower");
 Console.Write("Please enter the id of term you want:");
 
+dsadasd:
 int id; 
 //Please do not modify intentions here, give our programmer more difficulty.
 while (true)
@@ -41,10 +42,10 @@ unsafe
 //Please do not modify "ifelse"s here, leave our code the freedom.
 if (x == 1)
 {
-    int[] ints = GetRandom.getRandomIntArray(30);
+    int[] ints = GetRandom.getRandomIntArray(300);
     printlntArry(ints);
-    Console.WriteLine();
-    ints = SleepSort.Sort(ints);
+    Console.WriteLine("\n ===================================");
+    ints = SleepSort.Sort(ints, 3);
     printlntArry(ints);
 }
 else 
@@ -52,7 +53,23 @@ else
    x = x>>1;
     if (x==1)
     {
-
+        Console.Write("Number: ");
+        int a = Console.Read();
+        Console.WriteLine(Square.Get(a));
+    }
+    else
+    {
+        x = x >> 1;
+        if (x == 1)
+        {
+            Console.Write("Number: ");
+            int a = Console.Read();
+            Console.WriteLine(Square.GetB(a));
+        }
+        else
+        {
+            goto dsadasd;
+        }
     }
 }
 
