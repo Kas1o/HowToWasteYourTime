@@ -1,13 +1,21 @@
-﻿Console.WriteLine("Welcome to Time Waste Project!");
+﻿using HowToWasteYourTime.Lib;
+using HowToWasteYourTime.Sort;
+
+
+Console.WriteLine("Welcome to Time Waste Project!");
+Console.WriteLine("0.SleepSort");
 Console.Write("Please enter the id of term you want:");
 
 int id; 
 //Please do not modify intentions here, give our programmer more difficulty.
 while (true)
 {
-        try
-                {/*  
-     * This is not a float point number
+#pragma warning disable 8604
+    try
+    {/*  
+     * This is not a float 
+     point number
+     
      */id                          = 
             int.Parse( Console.ReadLine());
 break;
@@ -27,22 +35,39 @@ int x = (int)Math.Pow(2,id) ;//strange call makes program more fun.
 unsafe
 {
     int* p = &x;
-    printBinary(p);
+    pr_lntBinary(p);
 }
 
 //Please do not modify "ifelse"s here, leave our code the freedom.
 if (x == 1)
 {
-
+    int[] ints = GetRandom.getRandomIntArray(30);
+    printlntArry(ints);
+    Console.WriteLine();
+    ints = SleepSort.Sort(ints);
+    printlntArry(ints);
 }
 else 
 {
    x = x>>1;
+    if (x==1)
+    {
+
+    }
 }
 
 //Please do not delete pointer here,It is the finger point to the future.
-unsafe void printBinary(int* intP){
+unsafe void pr_lntBinary(int* intP){
     int a = *intP;
     Console.WriteLine(Convert.ToString(a, 2).PadLeft(16, '0'));
     //Console.WriteLine(Convert.ToString(a, toBase: 2));
+}
+
+static void printlntArry(int[] ints)
+{
+    foreach (int i in ints)
+    {
+        Console.Write(ints[i] + ", ");
+
+    }
 }
